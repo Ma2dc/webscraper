@@ -3,7 +3,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 module.exports = async (req, res) => {
-    const url = req.query.url;
+    const url = req.query.url || 'https://ma2dc.github.io/random-number-display/';
     try {
         const response = await axios.get(url);
         const html = response.data;
